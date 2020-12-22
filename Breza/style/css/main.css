@@ -291,8 +291,32 @@ BOTONES
     outline: none;
 
 }
-
-
+/**/
+input[type=text] {
+	width: 130px;
+	box-sizing: border-box;
+	border: 2px solid #ccc;
+	border-radius: 4px;
+	font-size: 16px;
+	color: rgba(21, 32, 36, 0.55);
+	border-color: rgba(0, 18, 38, 0.55);
+	background-color: white;
+	background-image: url('../assets/img/search.png');
+	background-position: 10px 7px; 
+	background-repeat: no-repeat;
+	padding: 12px 20px 12px 40px;
+	-webkit-transition: width 0.4s ease-in-out;
+	transition: width 0.4s ease-in-out;
+	outline:none;
+	font-weight: 600;
+	box-shadow:  2px 3px 4px 0px rgba(157, 153, 153, 0.55);
+}
+  
+input[type=text]:focus {
+	width: 110%;
+	outline: none;
+  }
+/**/
 .btn3-second {
 	display: flex;
 	justify-content: center;
@@ -308,8 +332,6 @@ BOTONES
     color: #58af9b;
     outline: none;
 }
-
-
 
 /*   */
 /* BOTONES DERECHA IZQUIER=>EXPORTAR Y GUARDAR*/
@@ -345,6 +367,7 @@ BOTONES
     align-items: center;
     box-shadow: 6px 10px 15px 0px rgba(157, 153, 153, 0.55);
 }
+
 
 .form {
     display: flex;
@@ -631,7 +654,7 @@ img.NavBar-Nav-icon{
     top: -30%;
     width: 200%;
     height: 200%;
-    background: rgb(144, 220, 255);
+    background: rgba(144, 220, 255,0.7);
     transform: skewY(345deg);
     transition: 0.5s;
 }
@@ -654,6 +677,16 @@ img.NavBar-Nav-icon{
 	top: 0;
 	font-size: 20px;
 }
+.container-category .category_letra{
+	position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+    z-index: 10;
+}
+
 #categori-1:hover{ background-color: #332f2f; border-color: #7e7b7b; }
 
 /*====PopUpLogin==*/

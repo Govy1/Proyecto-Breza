@@ -2492,11 +2492,8 @@ label {
   margin-bottom: 5px;
   font-weight: bold;
 }
-input[type="search"] {
-  -webkit-box-sizing: border-box;
-     -moz-box-sizing: border-box;
-          box-sizing: border-box;
-}
+
+
 input[type="radio"],
 input[type="checkbox"] {
   margin: 4px 0 0;
@@ -2540,11 +2537,9 @@ output {
   background-image: none;
   border: 1px solid #D7DBDF;
   transition: border-color ease-in-out .15s;
+  outline: none;
 }
-.form-control:focus, .form-control:hover {
-  border-color: #D30A52;
-  outline: 0;
-}
+
 .form-control::-moz-placeholder {
   color: #999;
   opacity: 1;
