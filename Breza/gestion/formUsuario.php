@@ -51,11 +51,7 @@ class formUsuario{
                                 <i class="fa fa-sign-out fa-fw" aria-hidden="true"></i> Cerrar sesión
                             </a>
                         </div>
-                        <li>
-                            <a href="index.html" class="">
-                                <i class="fa fa-home fa-fw hidden-md hidden-lg" aria-hidden="true"></i> INICIO
-                            </a>
-                        </li>
+                       
                         <?php session_start();
                         $nombre =  $_SESSION['user'][1]." ".$_SESSION['user'][2]." ".$_SESSION['user'][3];?>
                         <li class="hidden-xs hidden-sm"><label class="btn-PopUpLogin"><?php echo $nombre;?></label></li>
@@ -71,7 +67,7 @@ class formUsuario{
             <!-- ====== PopUpLogin ======-->
             <section class="full-width PopUpLogin PopUpLogin-2">
                 <div class="full-width">
-                    <a href="perfil.html"><i class="fa fa-user fa-fw" aria-hidden="true"></i> Tu perfil</a>
+                    <a href=""><i class="fa fa-user fa-fw" aria-hidden="true"></i>Inicio</a>
                     <a href="config.html"><i class="fa fa-cogs fa-fw" aria-hidden="true"></i> Configuración</a>
                     <div role="separator" class="divider"></div>
                     <a href="#!"><i class="fa fa-sign-out fa-fw" aria-hidden="true"></i> Cerrar sesión</a>
@@ -107,21 +103,41 @@ class formUsuario{
                         </div>
                         <div class="grupo inner-addon">
                             <label class="labe">Privilegios</label>  
+                            <br>
                             <?php 
                             $i=0; 
+                            
                             if($detalle == null){
+                                
                                 foreach ($privilegios as $value) {
+                                    
                                     echo "Gestión de ".$value[0]; ?>
-                                    <input style="height: 30px; outline: none;" type='checkbox' name="privilegio<?php echo ++$i;?>" value="1">
+
+                                         <div class=" page__custom-settings page__toggle" style="margin-top:-21px;">
+                                            <label class="toggle" >
+                                            <input class="toggle__input"  type='checkbox' name="privilegio<?php echo ++$i;?>" value="1" >            
+                                            <span class="toggle__label" >
+                                                <span class="toggle__text" ></span>
+                                            </span>
+                                            </label>
+                                        </div>                     
+                                          
                             <?php }
                             }else{
                                 $j=0;
                                 foreach ($privilegios as $value) {
                                     echo "Gestión de ".$value[0]; ?>
-                                    <input style="height: 30px; outline: none;"  type='checkbox' name="privilegio<?php echo ++$i;?>" value="1" <?php if($detalle[$j][0] == $value[0]){ echo "checked='checked'"; $j++;}?>>
-                                <?php                                    
+                                        <div class=" page__custom-settings page__toggle" style="margin-top:-21px;">
+                                            <label class="toggle" >
+                                            <input  class="toggle__input" type='checkbox'  name="privilegio<?php echo ++$i;?>" value="1"<?php if($detalle[$j][0] == $value[0]){ echo "checked='checked'"; $j++;}?> >
+                                            <span class="toggle__label" >
+                                                <span class="toggle__text" ></span>
+                                            </span>
+                                            </label>
+                                        </div>                                    
+                               <?php                                    
                                 }
-                            } ?>                                        
+                            } ?>    
                         </div>
                         <input type="hidden" name="accion" value="Guardar">
                         <input type="hidden" name="registrar" value="<?php echo $tipo?>">

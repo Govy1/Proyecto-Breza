@@ -79,15 +79,11 @@ class gestionMaquinas{
                                 <i class="fa fa-sign-out fa-fw" aria-hidden="true"></i> Cerrar sesión
                             </a>
                         </div>
-                        <li>
-                            <a href="index.html" class="">
-                                <i class="fa fa-home fa-fw hidden-md hidden-lg" aria-hidden="true"></i> INICIO
-                            </a>
-                        </li>
+                       
                         <!--NOMBRE DE LA PERSONA RESPONSABLE HA ADMINISTRAR LA PAGINA-->
                         <?php session_start();
                         $nombre =  $_SESSION['user'][1]." ".$_SESSION['user'][2]." ".$_SESSION['user'][3];?>
-                        <li class="hidden-xs hidden-sm"><a class="btn-PopUpLogin" ><?php echo $nombre;?></a></li>
+                        <li style="font-weight: 600;" class="hidden-xs hidden-sm"><a class="btn-PopUpLogin" ><?php echo $nombre;?></a></li>
                         <li class="hidden-xs hidden-sm">
                             <!--<i class="fa fa-user NavBar-Nav-icon btn-PopUpLogin" aria-hidden="true"></i>-->
                             <img src="../style/assets/img/user.png" alt="" class="NavBar-Nav-icon btn-PopUpLogin">
@@ -100,7 +96,7 @@ class gestionMaquinas{
             <!-- ====== PopUpLogin ======-->
             <section class="full-width PopUpLogin PopUpLogin-2">
                 <div class="full-width">
-                    <a href="perfil.html"><i class="fa fa-user fa-fw" aria-hidden="true"></i> Tu perfil</a>
+                    <a href="perfil.html"><i class="fa fa-user fa-fw" aria-hidden="true"></i> Inicio</a>
                     <a href="config.html"><i class="fa fa-cogs fa-fw" aria-hidden="true"></i> Configuración</a>
                     <div role="separator" class="divider"></div>
                     <a href="#!"><i class="fa fa-sign-out fa-fw" aria-hidden="true"></i> Cerrar sesión</a>
@@ -143,7 +139,7 @@ class gestionMaquinas{
                                 <div class="d-flex bd-highlight">
                                     <div class="row no-gutters">
                                     <div class="col-sm-6 col-md-8">
-                                        <div class="content-select">
+                                        <div class="content-select" style="margin-left: 15px;">
                                             <input class="form-control col-md-3 light-table-filter" data-table="table table-striped" type="text2" placeholder="Buscar">
                                         </div>
                                     </div>
@@ -151,7 +147,7 @@ class gestionMaquinas{
                                         <form action="getMaquinas.php" method="POST">
                                             <div class="col-6 col-md-4">
                                             <input type="hidden" value="Nuevo" name="accion">
-                                                <button style="left: 50px;" class="btn btn-second">Nuevo</button>									
+                                                <button style="margin-left: 182px; margin-top: 11px ;" class="btn btn-second">Nuevo</button>									
                                             </div>
                                         </form>
                                     </div>	
@@ -182,7 +178,7 @@ class gestionMaquinas{
                                                 <form action="getMaquinas.php" method="post">
                                                     <input type="hidden" value="Modificar" name="accion">
                                                     <input type="hidden" value="<?php echo $value[0] ?>" name="txtid">
-                                                    <button class="btn btn-info">Modificar</button>
+                                                    <button  style="margin-top: 1px;" class="btn btnM-second ">Modificar</button>
                                                 </form>
 
                                             </td> <!--cambiar referencia -->

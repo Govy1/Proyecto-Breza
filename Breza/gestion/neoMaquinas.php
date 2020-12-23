@@ -36,18 +36,14 @@ class neoMaquinas{
                                 <i class="fa fa-sign-out fa-fw" aria-hidden="true"></i> Cerrar sesión
                             </a>
                         </div>
-                        <li>
-                            <a href="index.html" class="">
-                                <i class="fa fa-home fa-fw hidden-md hidden-lg" aria-hidden="true"></i> INICIO
-                            </a>
-                        </li>
+                        
                         <!-- 
                             NOMBRE DE LA PERSONA RESPONSABLE HA ADMINISTRAR LA PAGINA
 
                         -->
                         <?php session_start();
                         $nombre =  $_SESSION['user'][1]." ".$_SESSION['user'][2]." ".$_SESSION['user'][3];?>
-                        <li class="hidden-xs hidden-sm"><a class="btn-PopUpLogin" href="#!"><?php echo $nombre;?></a></li>
+                        <li  class="hidden-xs hidden-sm"><a class="btn-PopUpLogin" href="#!"><?php echo $nombre;?></a></li>
                         <li class="hidden-xs hidden-sm">
                             <!--<i class="fa fa-user NavBar-Nav-icon btn-PopUpLogin" aria-hidden="true"></i>-->
                             <img src="../style/assets/img/user.png" alt="" class="NavBar-Nav-icon btn-PopUpLogin">
@@ -60,7 +56,7 @@ class neoMaquinas{
             <!-- ====== PopUpLogin ======-->
             <section class="full-width PopUpLogin PopUpLogin-2">
                 <div class="full-width">
-                    <a href="perfil.html"><i class="fa fa-user fa-fw" aria-hidden="true"></i> Tu perfil</a>
+                    <a href="perfil.html"><i class="fa fa-user fa-fw" aria-hidden="true"></i> Inicio</a>
                     <a href="config.html"><i class="fa fa-cogs fa-fw" aria-hidden="true"></i> Configuración</a>
                     <div role="separator" class="divider"></div>
                     <a href="#!"><i class="fa fa-sign-out fa-fw" aria-hidden="true"></i> Cerrar sesión</a>
@@ -102,9 +98,9 @@ class neoMaquinas{
                             <label class="labe" for="">UBICACIÓN</label>                      
                             <input type="text" placeholder="Ingrese ubicación" name="txtubicacion" <?php if($maquina != null) echo "value='".$maquina[4]."'"?> required ><span class="barra"></span>
                         </div>
-                        <div class="grupo inner-addon">
+                        <div  class="grupo inner-addon">
                             <label class="labe" for="">CANTIDAD</label>                      
-                            <input type="number" placeholder="Ingrese ubicación" name="txtcantidad" <?php if($maquina != null) echo "value='".$maquina[5]."'"?> required ><span class="barra"></span>
+                            <input type="number" placeholder="Ingrese cantidad" name="txtcantidad" <?php if($maquina != null) echo "value='".$maquina[5]."'"?> required ><span class="barra"></span>
                         </div>
                         <div class="grupo inner-addon">
                             <label class="labe" for="">ESTADO</label>                      

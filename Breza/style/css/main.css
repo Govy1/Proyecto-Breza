@@ -88,6 +88,7 @@ a:active{
 	-webkit-appearance: none;
 	-moz-appearance: none;
 	background: rgba(0,0,0,0.01);
+	outline: none;
 
 }
 .content-select select{
@@ -278,6 +279,18 @@ BOTONES
     color: #58af9b;
     outline: none;
 }
+.btnM-second {
+    background-color: #73caf5;
+    border: 1px solid #1e404dbd;
+	transition: background-color .5s;
+	outline: none;
+}
+.btnM-second:hover {
+    background-color: #fff;
+    border: 1px solid #5885af;
+    color: #3b82a9;
+    outline: none;
+}
 .btn3{
 	
 	background-color: #8f4040;
@@ -291,10 +304,15 @@ BOTONES
     outline: none;
 
 }
-/**/
+/*
+input de busqueda
+
+*/
 .light-table-filter , input[type=text2] {
-	width: 130px;
+	
+	width: 200px;
 	box-sizing: border-box;
+	margin-top: 14px;
 	border: 2px solid #ccc;
 	border-radius: 4px;
 	font-size: 16px;
@@ -312,10 +330,157 @@ BOTONES
 	box-shadow:  2px 3px 4px 0px rgba(157, 153, 153, 0.55);
 }
 .light-table-filter,input[type=text2]:focus {
-	width: 110%;
+	width: 140%;
 	outline: none;
   }
+/*
+=>checkBox =>configuracion
+*/
+.toggle{
+	--uiToggleSize: var(--toggleSize, 1.25rem);
+	--uiToggleBorderWidth: var(--toggleBorderWidth, 2px);
+	--uiToggleColor: var(--toggleColor, #222);
+	display: var(--toggleDisplay, inline-flex);
+	position: relative;
+	margin-left: 345px;
+
+  }
+  
+  .toggle__input{
+	width: var(--uiToggleSize);
+	height: var(--uiToggleSize);
+	opacity: 0;
+  
+	position: absolute;
+	
+	
+  }
+  
+  /*
+  1. Calculation of the gap for the custom checkbox
+  */
+  
+  .toggle__label{
+	display: inline-flex;
+	min-height: var(--uiToggleSize);
+	padding-left: calc(var(--uiToggleSize) + var(--toggleIndent, .4em));
+  
+}
+  
+  .toggle__input:not(:disabled) ~ .toggle__label{
+	cursor: pointer;
+  }
+  
+  /*
+  1. Ems helps to calculate size of the checkbox
+  */
+  
+  .toggle__label::after{
+	content: "";
+	box-sizing: border-box;  
+	width: 1em;
+	height: 1em;
+	font-size: var(--uiToggleSize); /* 1 */
+  
+	background-color: transparent;
+	border: var(--uiToggleBorderWidth) solid var(--uiToggleColor);
+  
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 2;
+  }
+  
+  .toggle__input:checked ~ .toggle__label::after{
+	background-color: var(--uiToggleColor);
+  }
+  
+  .toggle__text{
+	margin-top: auto;
+	margin-bottom: auto;
+  }
+  
+  
+  .toggle__label::before{
+	content: "";
+	width: 0;
+	height: 0;
+	font-size: var(--uiToggleSize); /* 1 */
+  
+	border-left-width: 0;
+	border-bottom-width: 0;
+	border-left-style: solid;
+	border-bottom-style: solid;
+	border-color: var(--toggleArrowColor, #fff);
+  
+	position: absolute;
+	top: .5428em;
+	left: .25em;
+	z-index: 3;
+  
+	transform-origin: left top;
+	transform: rotate(-40deg) skew(10deg);
+  }
+  
+  .toggle__input:checked ~ .toggle__label::before{
+	--uiToggleArrowWidth: var(--toggleArrowWidth, 2px);
+  
+	width: .4em;
+	height: .2em;
+	border-left-width: var(--uiToggleArrowWidth);
+	border-bottom-width: var(--uiToggleArrowWidth);
+  }
+  
+¡
+  
+  .toggle__input:disabled ~ .toggle__label{
+	opacity: var(--toggleOpacityDisabled, .24);
+	cursor: var(--toggleCursorDisabled, not-allowed);
+	user-select: none;
+	margin-top: -22px;
+
+}
+  
+  .toggle__label::after{
+	border-radius: var(--toggleBorderRadius, 2px);
+
+
+  }
+  
+  /* 
+  anmacion 
+  */  
+  .toggle__input:not(:disabled) ~ .toggle__label::before{
+	will-change: width, height;
+	opacity: 0;
+  }
+  
+  .toggle__input:not(:disabled):checked ~ .toggle__label::before{
+	opacity: 1;
+	transition: opacity .1s ease-out .25s, width .1s ease-out .5s, height .2s ease-out .3s;
+  }
+  
+  .toggle__input:not(:disabled) ~ .toggle__label::after{
+	will-change: background-color;
+	transition: background-color .2s ease-out;
+  }
+  
+  /*
+  =====
+  color 
+  =====
+  */
+  
+  .page__custom-settings{
+
+	--toggleColor: #690e90;
+	--toggleOutlineColorFocus: #690e90;
+	--toggleSize: 2rem;
+  }
 /**/
+
+
+
 .btn3-second {
 	display: flex;
 	justify-content: center;
@@ -375,7 +540,7 @@ BOTONES
     margin-top: 1px;
 	
 }
-.form input {
+.form input[type=text]  , input[type=password] {
     /**/
     background: rgba(0, 0,0, 0);
     border-radius: 5px;
@@ -383,19 +548,24 @@ BOTONES
     width: 100%;
 	border: 0;
 	margin-top: 1px;
+	font-weight: 600;
+
 	outline: none;
    
 }
+input[type="number"]{
+	width: 350px;
+	outline: none;
+	font-weight: 600;
+	border: 0;
+	margin: 2px;
 
-.form input .check{
-	background: rgba(0, 0,0, 0);
-    border-radius: 5px;
-    height: 20px;
-    width: 100%;
-    border: 0;
-    margin-top: 1px;
-    outline: none;
+
 }
+input[type="number"]:focus{
+	outline: none;
+}
+
 
 
 

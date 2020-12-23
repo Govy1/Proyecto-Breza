@@ -64,9 +64,7 @@ class principalUsuario{
                 <div class="titulo" >
                     Usuarios
                 </div>
-                <a href="../seguridad/getIndex.php" class="">
-                    <i class="fa fa-home fa-fw hidden-md hidden-lg" aria-hidden="true">INICIO</i> 
-                </a>
+               
                 <nav class=" full-width NavBar-Nav">
                     <div class="full-width NavBar-Nav-bg hidden-md hidden-lg show-menu-mobile"></div>
                     <ul class="list-unstyled full-width menu-mobile-c">
@@ -81,11 +79,7 @@ class principalUsuario{
                                 <i class="fa fa-sign-out fa-fw" aria-hidden="true"></i> Cerrar sesión
                             </a>
                         </div>
-                        <li>
-                            <a href="index.html" class="">
-                                <i class="fa fa-home fa-fw hidden-md hidden-lg" aria-hidden="true"></i> INICIO
-                            </a>
-                        </li>
+                       
                         <!-- 
                             NOMBRE DE LA PERSONA RESPONSABLE HA ADMINISTRAR LA PAGINA
 
@@ -105,7 +99,7 @@ class principalUsuario{
             <!-- ====== PopUpLogin ======-->
             <section class="full-width PopUpLogin PopUpLogin-2">
                 <div class="full-width">
-                    <a href="perfil.html"><i class="fa fa-user fa-fw" aria-hidden="true"></i> Tu perfil</a>
+                    <a href="perfil.html"><i class="fa fa-user fa-fw" aria-hidden="true"></i> Inicio</a>
                     <a href="config.html"><i class="fa fa-cogs fa-fw" aria-hidden="true"></i> Configuración</a>
                     <div role="separator" class="divider"></div>
                     <a href="#!"><i class="fa fa-sign-out fa-fw" aria-hidden="true"></i> Cerrar sesión</a>
@@ -144,14 +138,14 @@ class principalUsuario{
 						<div class="d-flex bd-highlight">
 							<div class="row no-gutters">
 								<div class="col-sm-6 col-md-8">
-									<div class="content-select boton">
+									<div class="content-select boton" style="margin-left: 15px;">
                                         <input  class="form-control col-md-3 light-table-filter" data-table="table table-striped" type="text2" placeholder="Buscar">
 									</div>
 								</div>
 								<div class="col-6 col-md-4">
 									<div class="der">
                                         <form action="getUsuario.php" method="POST">
-										    <input type="submit" class="btn btn-second" value="Nuevo" name="accion">
+										    <input style="margin-left: 178px; margin-top: 11px ;" type="submit" class="btn btn-second" value="Nuevo" name="accion">
                                         </form>    
 									</div>
 							  </div>	
@@ -181,7 +175,7 @@ class principalUsuario{
                                                 <form action="getUsuario.php" method="post">
                                                     <input type="hidden" name="id" value="<?php echo $value[0]?>">
                                                     <input type="hidden" name="accion" value="Editar">
-                                                    <button class="btn btn2-second ">Editar</button>
+                                                    <button  style="margin-top: 2px;"  class="btn btn2-second ">Editar</button>
                                                 </form>
                                                  
                                             </div>

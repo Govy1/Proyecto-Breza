@@ -35,11 +35,7 @@ class Principal{
                                 <i class="fa fa-sign-out fa-fw" aria-hidden="true"></i> Cerrar sesión
                             </a>
                         </div>
-                        <li>
-                            <a href="index.html" class="">
-                                <i class="fa fa-home fa-fw hidden-md hidden-lg" aria-hidden="true"></i> INICIO
-                            </a>
-                        </li>
+                       
                         <!-- 
                             NOMBRE DE LA PERSONA RESPONSABLE HA ADMINISTRAR LA PAGINA
 
@@ -82,7 +78,6 @@ class Principal{
                         </a>
                         </ul>
                 <?php } ?>
-<<<<<<< HEAD
                         <!--<a href="" id="categori-3">
                             <i class="fa fa-calendar-check-o" aria-hidden="true"></i>
                             <span>Gestion de Proveedores</span>
@@ -106,8 +101,6 @@ class Principal{
                         </a> -->
 
                         
-=======
->>>>>>> f32187624e20b67687c9f48fbc756f6ad73ff56b
                     </div>
                 </div>
         </section>

@@ -134,15 +134,18 @@ input::-moz-focus-inner {
 input {
   line-height: normal;
 }
-input[type="checkbox"],
+/* input[type="checkbox"],
 input[type="radio"] {
   -webkit-box-sizing: border-box;
      -moz-box-sizing: border-box;
           box-sizing: border-box;
   padding: 0;
-}
+} */
+
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
+  width: 220px;
+
   height: auto;
 }
 input[type="search"] {
@@ -2494,7 +2497,7 @@ label {
 }
 
 
-input[type="radio"],
+c
 input[type="checkbox"] {
   margin: 4px 0 0;
   margin-top: 1px \9;
@@ -2600,7 +2603,7 @@ input[type="search"] {
 }
 .form-group {
   margin-bottom: 15px;
-}
+}/* 
 .radio,
 .checkbox {
   position: relative;
@@ -2654,7 +2657,7 @@ fieldset[disabled] .checkbox-inline {
 fieldset[disabled] .radio label,
 fieldset[disabled] .checkbox label {
   cursor: not-allowed;
-}
+} */
 .form-control-static {
   min-height: 34px;
   padding-top: 7px;
@@ -3183,22 +3186,6 @@ fieldset[disabled] .btn-success.focus {
 .btn-success .badge {
   color: #5cb85c;
   background-color: #fff;
-}
-.btn-info {
-  color: #fff;
-  background-color: #5bc0de;
-  border-color: #46b8da;
-}
-.btn-info:focus,
-.btn-info.focus {
-  color: #fff;
-  background-color: #31b0d5;
-  border-color: #1b6d85;
-}
-.btn-info:hover {
-  color: #fff;
-  background-color: #31b0d5;
-  border-color: #269abc;
 }
 .btn-info:active,
 .btn-info.active,
