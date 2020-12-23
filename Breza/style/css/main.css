@@ -292,7 +292,7 @@ BOTONES
 
 }
 /**/
-input[type=text] {
+.light-table-filter , input[type=text2] {
 	width: 130px;
 	box-sizing: border-box;
 	border: 2px solid #ccc;
@@ -311,8 +311,7 @@ input[type=text] {
 	font-weight: 600;
 	box-shadow:  2px 3px 4px 0px rgba(157, 153, 153, 0.55);
 }
-  
-input[type=text]:focus {
+.light-table-filter,input[type=text2]:focus {
 	width: 110%;
 	outline: none;
   }

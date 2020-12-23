@@ -144,8 +144,8 @@ class principalUsuario{
 						<div class="d-flex bd-highlight">
 							<div class="row no-gutters">
 								<div class="col-sm-6 col-md-8">
-									<div class="content-select">
-                                        <input class="form-control col-md-3 light-table-filter" data-table="table table-striped" type="text" placeholder="Buscar">
+									<div class="content-select boton">
+                                        <input  class="form-control col-md-3 light-table-filter" data-table="table table-striped" type="text2" placeholder="Buscar">
 									</div>
 								</div>
 								<div class="col-6 col-md-4">

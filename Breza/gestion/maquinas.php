@@ -144,7 +144,7 @@ class gestionMaquinas{
                                     <div class="row no-gutters">
                                     <div class="col-sm-6 col-md-8">
                                         <div class="content-select">
-                                            <input class="form-control col-md-3 light-table-filter" data-table="table table-striped" type="text" placeholder="Buscar">
+                                            <input class="form-control col-md-3 light-table-filter" data-table="table table-striped" type="text2" placeholder="Buscar">
                                         </div>
                                     </div>
                                         <!-- Implementacion de formulario neoMaquinas -->
