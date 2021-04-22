@@ -4,9 +4,16 @@ include_once("conexion.php");
 class Calibracion{
 
     public function listaCalibracion(){
-        $lista = Conexion::select("SELECT c.idcalibracion, c.Fecha, c.numCertificado, m.Nombre, p.Nombre, c.Estado 
+        $lista = Conexion::select("SELECT c.idcalibracion, c.Fecha, c.numCertificado, m.Nombre, p.Nombre, c.Estado, m.codigo, m.ubicacion, p.telefono 
                         FROM calibracion c, maquinas m, proveedor p 
                         WHERE c.idmaquina = m.idmaquina AND c.idproveedor = p.idproveedor ORDER BY c.Fecha DESC");
+        return $lista;
+    }
+
+    public function listaReporte($year){
+        $lista = Conexion::select("SELECT c.idcalibracion, c.Fecha, c.numCertificado, m.Nombre, p.Nombre, c.Estado, m.codigo, m.ubicacion, p.telefono 
+                        FROM calibracion c, maquinas m, proveedor p 
+                        WHERE c.idmaquina = m.idmaquina AND c.idproveedor = p.idproveedor and YEAR(c.fecha) = $year ORDER BY c.Fecha DESC");
         return $lista;
     }
     

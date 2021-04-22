@@ -49,8 +49,32 @@
                 LightTableFilter.init();
                 }
             });
-
             })(document);
+
+            function reporte(){
+                let year = parseInt(prompt("Año del reporte","2019"));
+                let y = new Date().getFullYear();
+                if(year < 2019 || year > y){
+                    alert("El año no cuenta con reporte");
+                }
+                else{
+                    if(!isNaN(year)){
+                        let cod = prompt("Codigo: ","");
+                        if(cod.trim() != ""){
+                            let ver = prompt("Version:");
+                            if (ver.trim() != "") {
+                                document.getElementById("reporte").href = "reporte.php?tipo=1&a="+year+"&c="+cod+"&v="+ver;
+                                return true;
+                            }else{
+                                alert("No ingreso version");
+                            }
+                        }else{
+                            alert("No ingreso codigo");
+                        }
+                    }
+                }
+                return false;
+            }
             </script>
         </head>
         <body>
@@ -85,7 +109,7 @@
                         <!--NOMBRE DE LA PERSONA RESPONSABLE HA ADMINISTRAR LA PAGINA-->
                         <?php session_start();
                         $nombre =  $_SESSION['user'][1]." ".$_SESSION['user'][2]." ".$_SESSION['user'][3];?>
-                        <li class="hidden-xs hidden-sm"><a class="btn-PopUpLogin" ><?php echo $nombre;?></a></li>
+                        <li class="hidden-xs hidden-sm"><label class="btn-PopUpLogin"><?php echo $nombre;?></label></li>
                         <li class="hidden-xs hidden-sm">
                             <!--<i class="fa fa-user NavBar-Nav-icon btn-PopUpLogin" aria-hidden="true"></i>-->
                             <img src="../style/assets/img/user.png" alt="" class="NavBar-Nav-icon btn-PopUpLogin">
@@ -98,10 +122,7 @@
             <!-- ====== PopUpLogin ======-->
             <section class="full-width PopUpLogin PopUpLogin-2">
                 <div class="full-width">
-                    <a href="perfil.html"><i class="fa fa-user fa-fw" aria-hidden="true"></i> Tu perfil</a>
-                    <a href="config.html"><i class="fa fa-cogs fa-fw" aria-hidden="true"></i> Configuración</a>
-                    <div role="separator" class="divider"></div>
-                    <a href=""><i class="fa fa-sign-out fa-fw" aria-hidden="true"></i> Cerrar sesión</a>
+                <a href="../seguridad/cierreSesion.php"><i class="fa fa-sign-out fa-fw" aria-hidden="true"></i> Cerrar sesión</a>
                 </div>
             </section>
         <!-- ====== Contenido de pagina ======-->
@@ -143,7 +164,10 @@
                                             <div class="der">
                                                 <form action="getMantenimiento.php" method="POST">
                                                     <input type="submit" class="btn btn-second" value="Nuevo" name="accion">
-                                                </form>    
+                                                </form>
+                                            </div>
+                                            <div class="izq">
+                                                <a href="" class="btn btn-info" id="reporte" onclick="return reporte()">Reporte</a>    
                                             </div>
                                         </div>
                                     </div>	

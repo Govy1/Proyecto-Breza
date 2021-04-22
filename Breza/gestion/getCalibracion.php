@@ -2,10 +2,9 @@
 include_once("../modelo/maquinas.php");
 include_once("../modelo/proveedor.php");
 include_once("../modelo/calibracion.php");
-include_once("./formNeoCalibracion.php");
-include_once("./formCalibracion.php");
-header('Cache-Control: no cache'); 
-session_cache_limiter('private_no_expire');
+include_once("formNeoCalibracion.php");
+include_once("formCalibracion.php");
+
 session_start();
 if ($_SESSION["acceso"]) {
     switch ($_POST['accion']){   
@@ -54,7 +53,5 @@ if ($_SESSION["acceso"]) {
 }else{
     header("Location: ../index.php");   
 }
-
-
 
 ?>

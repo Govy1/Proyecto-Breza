@@ -8,7 +8,7 @@ class gestionCalibracion{
         <head>
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-            <title>Maquinas</title>
+            <title>Lista Calibracion</title>
             <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
             <link rel="stylesheet" href="../style/css/bootstrap.css">
             <link rel="stylesheet" href="../style/css/main.css">
@@ -53,6 +53,31 @@ class gestionCalibracion{
             });
 
             })(document);
+
+            function reporte(){
+                let year = parseInt(prompt("Año del reporte","2019"));
+                let y = new Date().getFullYear();
+                if(year < 2019 || year > y){
+                    alert("El año no cuenta con reporte");
+                }
+                else{
+                    if(!isNaN(year)){
+                        let cod = prompt("Codigo: ","");
+                        if(cod.trim() != ""){
+                            let ver = prompt("Version:");
+                            if (ver.trim() != "") {
+                                document.getElementById("reporte").href = "reporte.php?tipo=0&a="+year+"&c="+cod+"&v="+ver;
+                                return true;
+                            }else{
+                                alert("No ingreso version");
+                            }
+                        }else{
+                            alert("No ingreso codigo");
+                        }
+                    }
+                }
+                return false;
+            }
             </script>
         </head>
         <body>
@@ -62,7 +87,7 @@ class gestionCalibracion{
                     <img src="../style/assets/img/breza.png" class="imBreza" alt="">
                 </div>
                 <div class="titulo" >
-                    Calibracion
+                    Cronograma de Calibracion
                 </div>
                          
                 <nav class=" full-width NavBar-Nav">
@@ -87,7 +112,7 @@ class gestionCalibracion{
                         <!--NOMBRE DE LA PERSONA RESPONSABLE HA ADMINISTRAR LA PAGINA-->
                         <?php session_start();
                         $nombre =  $_SESSION['user'][1]." ".$_SESSION['user'][2]." ".$_SESSION['user'][3];?>
-                        <li class="hidden-xs hidden-sm"><a class="btn-PopUpLogin" ><?php echo $nombre;?></a></li>
+                        <li class="hidden-xs hidden-sm"><label class="btn-PopUpLogin"><?php echo $nombre;?></label></li>
                         <li class="hidden-xs hidden-sm">
                             <!--<i class="fa fa-user NavBar-Nav-icon btn-PopUpLogin" aria-hidden="true"></i>-->
                             <img src="../style/assets/img/user.png" alt="" class="NavBar-Nav-icon btn-PopUpLogin">
@@ -100,10 +125,7 @@ class gestionCalibracion{
             <!-- ====== PopUpLogin ======-->
             <section class="full-width PopUpLogin PopUpLogin-2">
                 <div class="full-width">
-                    <a href="perfil.html"><i class="fa fa-user fa-fw" aria-hidden="true"></i> Tu perfil</a>
-                    <a href="config.html"><i class="fa fa-cogs fa-fw" aria-hidden="true"></i> Configuración</a>
-                    <div role="separator" class="divider"></div>
-                    <a href="#!"><i class="fa fa-sign-out fa-fw" aria-hidden="true"></i> Cerrar sesión</a>
+                <a href="../seguridad/cierreSesion.php"><i class="fa fa-sign-out fa-fw" aria-hidden="true"></i> Cerrar sesión</a>
                 </div>
             </section>
         <!-- ====== Contenido de pagina ======-->
@@ -154,6 +176,9 @@ class gestionCalibracion{
                                                 <button style="left: 50px;" class="btn btn-second">Nuevo</button>									
                                             </div>
                                         </form>
+                                        <div class="izq">
+                                            <a href="" class="btn btn-info" id="reporte" onclick="return reporte()">Reporte</a>    
+                                        </div>
                                     </div>	
                                 </div>
                                 <span></span>
@@ -191,14 +216,14 @@ class gestionCalibracion{
                                                 <form action="getCalibracion.php" method="post">
                                                     <input type="hidden" value="Modificar" name="accion">
                                                     <input type="hidden" value="<?php echo $value[0] ?>" name="txtid">
-                                                    <button class="btn btn-info">Modificar</button>
+                                                    <button class="btn btn2-second ">Modificar</button>
                                                 </form>
                                             </td> <!--cambiar referencia -->
                                             <!--
                                             <td>
                                                 <form action="getMaquinas.php" method="post">
                                                     <input type="hidden" value="Eliminar" name="accion">
-                                                    <input type="hidden" value="<?php $lista[0] ?>" name="txtid">
+                                                    <input type="hidden" value="<?php //$lista[0] ?>" name="txtid">
                                                     <button class="btn btn-danger">Eliminar</button>
                                                 </form>
                                             </td> --> <!--cambiar referencia --> 
@@ -211,86 +236,6 @@ class gestionCalibracion{
                     </div>
                 </div>
             </section>
-            <!-- ====== Pie de pagina ======-->
-        <!-- 	<footer class="full-width footer">
-                <div class="container">
-                    <p class="text-semi-bold">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium consequatur quia voluptates voluptas accusamus aliquid in magni. Ullam non, at dolore accusantium ab fugit. Optio quidem blanditiis possimus at vero?
-                    </p>
-                    
-                </div>
-                <br>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-xs-12 col-sm-6">
-                            <h4 class="text-light text-center">Síguenos en las redes sociales</h4> 
-                            <ul class="list-unstyled fullwidth text-center footer-social">
-                                <li>
-                                    <a href="#!">
-                                        <i class="fa fa" aria-hidden="true">A</i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#!">
-                                        <i class="fa fa-g" aria-hidden="true">G</i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#!">
-                                        <i class="fa fa-google-plus" aria-hidden="true"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#!">
-                                        <i class="fa fa-twitter" aria-hidden="true"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#!">
-                                        <i class="fa fa-youtube" aria-hidden="true"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#!">
-                                        <i class="fa fa-instagram" aria-hidden="true"></i>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="col-xs-12 col-sm-6">
-                            <h4 class="text-light text-center">Descárgate nuestras apps gratuitas</h4>
-                            <ul class="list-unstyled fullwidth text-center footer-app-store">
-                                <li>
-                                    <a href="#!">
-                                        <i class="fa fa-apple" aria-hidden="true"></i> App Store
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#!">
-                                        <i class="fa fa-android" aria-hidden="true"></i> Play Store
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#!">
-                                        <i class="fa fa-windows" aria-hidden="true"></i> Windows Store
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <br>
-                <div class="container">
-                    <div class="col-xs-12">
-                        <ul class="list-unstyled text-center full-width footer-copyright">
-                            <li>&copy; 2020 Company</li>
-                            <li><a href="#!">Semillitas</a></li>
-                            <li><a href="#!">del</a></li>
-                            <li><a href="#!">Saber</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </footer> -->
             <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
             <script>window.jQuery || document.write('<script src="js/jquery-1.11.2.min.js"><\/script>')</script>
             <script src="../style/js/bootstrap.min.js"></script>
